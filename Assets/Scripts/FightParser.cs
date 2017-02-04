@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FightParser : MonoBehaviour {
 
-    public int[] EnemyChosen = new int[10];
-    public int[] PlayerChosen = new int[10];
-    public int[] EnemyTeam = new int[10];
+    public int[] EnemyChosen = new int[3];
+    public int[] PlayerChosen = new int[3];
+    public int[] EnemyTeam = new int[4];
     private string[] CharList = new string[] { "Rory", "Pedro", "Jack", "Kit", "Natalie", "Sophie", "Emilia", "Maisie" };
     public int PlayerHealth;
     public int EnemyHealth;
@@ -276,7 +276,7 @@ public class FightParser : MonoBehaviour {
             if (PlayerSecondaryBlocks > 0)
             {
                 LowestEnemyDamage = EnemyDamage[0];
-                for (int i = 0; i < EnemyDamage.Length; i++)
+                for (int i = 0; i < EnemyDamage.Length - 1; i++)
                 {
                     if (EnemyDamage[i] > 0 && EnemyDamage[i] < EnemyDamage[LowestEnemyDamage])
                         LowestEnemyDamage = i;
@@ -286,7 +286,7 @@ public class FightParser : MonoBehaviour {
             if (EnemySecondaryBlocks > 0)
             {
                 LowestPlayerDamage = PlayerDamage[0];
-                for (int i = 0; i < PlayerDamage.Length; i++)
+                for (int i = 0; i < PlayerDamage.Length - 1; i++)
                 {
                     if (PlayerDamage[i] > 0 && PlayerDamage[i] < PlayerDamage[LowestPlayerDamage])
                         LowestPlayerDamage = i;

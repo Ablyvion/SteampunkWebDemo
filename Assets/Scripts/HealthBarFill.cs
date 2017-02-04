@@ -15,8 +15,18 @@ public class HealthBarFill : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        playerhealth.fillAmount = GetComponent<FightParser>().PlayerHealth / GetComponent<FightParser>().PlayerMaxHealth;
-        enemyhealth.fillAmount = GetComponent<FightParser>().EnemyHealth / GetComponent<FightParser>().EnemyMaxHealth;
+        float PlayerHp;
+        float PlayerMaxHp;
+        float EnemyHp;
+        float EnemyMaxHp;
+
+        PlayerHp = GetComponent<FightParser>().PlayerHealth;
+        PlayerMaxHp = GetComponent<FightParser>().PlayerMaxHealth;
+        EnemyHp = GetComponent<FightParser>().EnemyHealth;
+        EnemyMaxHp = GetComponent<FightParser>().EnemyMaxHealth;
+
+        playerhealth.fillAmount = PlayerHp / PlayerMaxHp;
+        enemyhealth.fillAmount = EnemyHp / EnemyMaxHp;
 
     }
 }

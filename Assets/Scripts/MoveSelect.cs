@@ -109,7 +109,7 @@ public class MoveSelect : MonoBehaviour
                 ParseFight = true;
             CurrentChar++;
         }
-        if (CurrentChar > 4)
+        if (CurrentChar > 5)
         {
             chosen1 = -1;
             chosen2 = -1;
